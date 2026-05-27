@@ -51,7 +51,9 @@ export default function Home() {
             className="rounded-[24px] p-5 relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #FFF9F8 0%, #E2D6C4 100%)', boxShadow: '0 8px 30px rgba(226, 214, 196, 0.4)' }}
           >
-            <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full" style={{ background: 'rgba(255,255,255,0.6)' }} />
+            <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.1)] border-[3px] border-white/50">
+              <img src="/jazfit.jpeg" alt="JAZFIT Logo" className="w-full h-full object-cover" />
+            </div>
             <div className="absolute -bottom-8 -left-4 w-20 h-20 rounded-full" style={{ background: 'rgba(244, 204, 197, 0.2)' }} />
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-2">
