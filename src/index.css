@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* ── JAZFIT Design Tokens ────────────────────────────────────── */
+@theme {
+  --color-cream: #E2D6C4;
+  --color-silver: #D5D5D5;
+  --color-gray: #848585;
+  --color-blush: #F4CCC5;
+  --color-rose: #EDBEC5;
+  --color-petal: #F5D4D2;
+
+  --color-cream-light: #f0ebe3;
+  --color-blush-light: #faf0ee;
+  --color-rose-light: #f8e8eb;
+  --color-petal-light: #fcf0ef;
+
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Base Reset ─────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #FFF9F8;
+  color: #3a3a3a;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  background: #FFF9F8;
+}
+
+@media (min-width: 768px) {
+  #root {
+    max-width: 480px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.04);
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
+    max-width: 430px;
+  }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 0; height: 0; }
+* { scrollbar-width: none; }
+
+/* ── Glass Effect Utility ───────────────────────────────────── */
+.glass {
+  background: rgba(255, 249, 248, 0.65);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-strong {
+  background: rgba(255, 249, 248, 0.85);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* ── Premium Card ───────────────────────────────────────────── */
+.card-premium {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ── Gradient Backgrounds ───────────────────────────────────── */
+.gradient-blush {
+  background: linear-gradient(135deg, #F5D4D2 0%, #FFF9F8 50%, #E2D6C4 100%);
+}
+
+.gradient-cream {
+  background: linear-gradient(135deg, #FFF9F8 0%, #E2D6C4 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(180deg, #FFF9F8 0%, #F5D4D2 100%);
+}
+
+/* ── Button Styles ──────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #F4CCC5, #EDBEC5);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(237, 190, 197, 0.3);
+  letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(237, 190, 197, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(237, 190, 197, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #848585;
+  border: 1.5px solid #D5D5D5;
+  border-radius: 16px;
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #EDBEC5;
+  color: #EDBEC5;
+  background: #faf0ee;
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ── Image Placeholders ─────────────────────────────────────── */
+.img-placeholder {
+  background: linear-gradient(135deg, #E2D6C4, #F4CCC5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
